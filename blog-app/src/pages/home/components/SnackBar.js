@@ -39,7 +39,7 @@ export const SnackBar = ({ open, setOpen }) => {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       >
         <Alert onClose={handleClose} severity='success' sx={{ width: '100%' }}>
-          Post geslaagd!
+          Post geplaats!
         </Alert>
       </Snackbar>
     </div>

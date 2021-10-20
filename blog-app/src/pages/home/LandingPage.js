@@ -13,7 +13,7 @@ import PrimaryButton from './components/PrimaryButton';
 import PhotoCameraOutlinedIcon from '@mui/icons-material/PhotoCameraOutlined';
 
 import { getBlogs } from '../../utils/helpers';
-import LadingPageLogic from './LadingPageLogic';
+import LandingPageLogic from './LandingPageLogic';
 import { Box } from '@mui/system';
 import { SnackBar } from './components/SnackBar';
 
@@ -32,7 +32,7 @@ const LandingPage = () => {
     error,
     open,
     setOpen,
-  } = LadingPageLogic();
+  } = LandingPageLogic();
 
   return (
     <div className={classes.mainContainer}>
@@ -42,7 +42,7 @@ const LandingPage = () => {
             Plaats een blog bericht
           </h1>
           <div className={classes.textFieldContainer}>
-            <h3 className={classes.postContainerSubTitle}>Berichtnaam</h3>
+            <h2 className={classes.postContainerSubTitle}>Berichtnaam</h2>
             <TextField
               fullWidth
               label='Geen titel'
@@ -55,7 +55,7 @@ const LandingPage = () => {
             />
           </div>
           <div className={classes.textFieldContainer}>
-            <h3 className={classes.postContainerSubTitle}>Categorie</h3>
+            <h2 className={classes.postContainerSubTitle}>Categorie</h2>
             <Select
               id='select-standard'
               displayEmpty
@@ -63,13 +63,13 @@ const LandingPage = () => {
               size='small'
               className={classes.select}
               name='category_id'
-              value={categories}
+              value={category}
               onChange={handleChange}
             >
               <MenuItem disabled value=''>
                 <em style={{ color: 'rgb(204 200 198)' }}>Geen categorie</em>
               </MenuItem>
-              {category?.map((option) => (
+              {categories?.map((option) => (
                 <MenuItem key={option.id} value={option.id}>
                   {option.name}
                 </MenuItem>
@@ -77,7 +77,7 @@ const LandingPage = () => {
             </Select>
           </div>
           <div className={classes.textFieldContainer}>
-            <h3 className={classes.postContainerSubTitle}>Header afbeelding</h3>
+            <h2 className={classes.postContainerSubTitle}>Header afbeelding</h2>
             <div className={classes.uploadContainer}>
               <PhotoCameraOutlinedIcon className={classes.uploadIcon} />
               <Button variant='contained' className={classes.uploadBtn}>
@@ -86,7 +86,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className={classes.textAreaContainer}>
-            <h3 className={classes.postContainerSubTitle}>Bericht</h3>
+            <h2 className={classes.postContainerSubTitle}>Bericht</h2>
             <TextareaAutosize
               className={classes.textArea}
               name='content'

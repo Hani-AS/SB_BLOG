@@ -10,9 +10,9 @@ const LadingPageLogic = () => {
   const { data: categoriesData } = useFetch(
     'http://178.62.198.162/api/categories'
   );
-  const [categories, setCategories] = useState('');
+  const [category, setCategory] = useState('');
   const handleChange = (event) => {
-    setCategories(event.target.value);
+    setCategory(event.target.value);
     handleUserData(event);
   };
 
@@ -20,7 +20,7 @@ const LadingPageLogic = () => {
   const [userData, setUserData] = useState({
     title: '',
     content: '',
-    category_id: categories,
+    category_id: category,
   });
   const handleUserData = (evt) => {
     const value = evt.target.value;
@@ -35,7 +35,7 @@ const LadingPageLogic = () => {
       return;
     }
     post('http://178.62.198.162/api/posts', userData);
-    setUserData({ title: '', content: '', category_id: categories });
+    setUserData({ title: '', content: '', category_id: category });
   };
 
   //snackbar
@@ -47,18 +47,18 @@ const LadingPageLogic = () => {
   }, [success]);
 
   // page number
-  const [, setPage] = useState(1);
+  const [page, setPage] = useState(1);
 
   // refetch
   const handleRefetch = () => {
     setPage((prev) => {
-      refetch(`http://178.62.198.162/api/posts?page=${prev + 1}`);
       return prev + 1;
     });
+    refetch(`http://178.62.198.162/api/posts?page=${page + 1}`);
   };
 
   // needed for select dropdown selector
-  const category = categoriesData;
+  const categories = categoriesData;
 
   const [landingPageData, setLandingPageData] = useState([]);
   useEffect(() => {
