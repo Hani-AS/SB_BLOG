@@ -126,8 +126,8 @@ const LandingPage = () => {
             />
           </div>
         </div>
+        <SnackBar {...{ open, setOpen }} />
       </div>
-      <SnackBar {...{ open, setOpen }} />
     </div>
   );
 };

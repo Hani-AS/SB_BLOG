@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 import SBlogo from '../../assets/svgs/SBlogo.svg';
-import background from './../../assets/images/background.png';
+import background from './../../assets/images/background.webp';
 
 export const useStyles = makeStyles((theme, prop) => {
   return {
