@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStyles } from './BlogStyles';
 
-const Blog = ({ img_url, category, content, title, created_at }) => {
+const Blog = ({ blog: { img_url, category, content, title, created_at } }) => {
   const classes = useStyles({ img_url });
   return (
     <div className={classes.blogContainer}>
