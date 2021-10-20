@@ -12,7 +12,15 @@ export const useStyles = makeStyles((theme, prop) => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
+        flexDirection: 'column',
         flexShrink: 0,
+      },
+    },
+    headerContainerMask: {
+      '&&': {
+        height: '250px',
+        width: '100%',
+        backgroundColor: 'rgba(0,0,0,0.4)',
         padding: '0 43px',
       },
     },
@@ -40,6 +48,18 @@ export const useStyles = makeStyles((theme, prop) => {
         [theme.breakpoints.down('xss')]: {
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
+        },
+      },
+    },
+    blogTitle: {
+      '&&': {
+        display: ({ blogTitle }) => !blogTitle && 'none',
+        fontSize: '48px',
+        textAlign: 'center',
+        color: '#fff',
+        fontWeight: 'bold',
+        [theme.breakpoints.down('s')]: {
+          marginTop: '30px',
         },
       },
     },
