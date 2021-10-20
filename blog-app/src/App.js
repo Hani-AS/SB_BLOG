@@ -7,6 +7,7 @@ import LandingPage from './pages/home/LandingPage';
 import Footer from './components/footer/Footer';
 import Blogs from './pages/blogs-page/Blogs';
 import './app.css';
+import NotFoundPage from './components/NotFoundPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Switch>
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/blogs-page' component={Blogs} />
+              <Route component={NotFoundPage} />
             </Switch>
             <Footer />
           </div>
