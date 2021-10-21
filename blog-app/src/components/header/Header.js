@@ -9,38 +9,40 @@ const Header = () => {
   return (
     <div className={classes.headerContainer}>
       <div className={classes.headerContainerMask}>
-        <div className={classes.innerContainer}>
-          <div className={classes.logo}></div>
-          <div className={classes.buttonsContainer}>
-            <NavLink
-              exact
-              to='/'
-              activeStyle={{
-                borderBottom: '#E95E30 2px solid',
-              }}
-            >
-              <Button
-                disableRipple
-                className={classes.btn}
-                onClick={() => setBlogTitle(false)}
+        <div className={classes.innerContainerWrapper}>
+          <div className={classes.innerContainer}>
+            <div className={classes.logo}></div>
+            <div className={classes.buttonsContainer}>
+              <NavLink
+                exact
+                to='/'
+                activeStyle={{
+                  borderBottom: '#E95E30 2px solid',
+                }}
               >
-                home
-              </Button>
-            </NavLink>
-            <NavLink
-              to='/blogs-page'
-              activeStyle={{
-                borderBottom: '#E95E30 2px solid',
-              }}
-            >
-              <Button
-                disableRipple
-                className={classes.btn}
-                onClick={() => setBlogTitle(true)}
+                <Button
+                  disableRipple
+                  className={classes.btn}
+                  onClick={() => setBlogTitle(false)}
+                >
+                  home
+                </Button>
+              </NavLink>
+              <NavLink
+                to='/blogs-page'
+                activeStyle={{
+                  borderBottom: '#E95E30 2px solid',
+                }}
               >
-                Blog
-              </Button>
-            </NavLink>
+                <Button
+                  disableRipple
+                  className={classes.btn}
+                  onClick={() => setBlogTitle(true)}
+                >
+                  Blog
+                </Button>
+              </NavLink>
+            </div>
           </div>
         </div>
         <div className={classes.blogTitle}>Blog</div>

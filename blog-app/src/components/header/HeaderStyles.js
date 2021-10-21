@@ -21,6 +21,15 @@ export const useStyles = makeStyles((theme, prop) => {
         height: '250px',
         width: '100%',
         backgroundColor: 'rgba(0,0,0,0.4)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+    },
+    innerContainerWrapper: {
+      '&&': {
+        width: '100%',
+        maxWidth: '1024px',
         padding: '0 43px',
       },
     },

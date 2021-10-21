@@ -15,13 +15,15 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
-          <div className='main-container'>
-            <Header />
-            <Switch>
-              <Route exact path='/' component={LandingPage} />
-              <Route exact path='/blogs-page' component={Blogs} />
-              <Route component={NotFoundPage} />
-            </Switch>
+          <Header />
+          <div className='main-container-wrapper'>
+            <div className='main-container'>
+              <Switch>
+                <Route exact path='/' component={LandingPage} />
+                <Route exact path='/blogs-page' component={Blogs} />
+                <Route component={NotFoundPage} />
+              </Switch>
+            </div>
             <Footer />
           </div>
         </Router>
